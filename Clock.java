@@ -2,9 +2,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 class Clock {
-    // Use Constant - ANSI escape codes to colour output string
+    // Use constant - ANSI escape codes to colour output string
     public static final String ANSI_RED = "\u001B[31m";
-    // Use Constant - ANSI escape codes to reset the colour of output
+    // Use constant - ANSI escape codes to reset the colour of output
     public static final String ANSI_RESET = "\u001B[0m";
     
     // Create main method
