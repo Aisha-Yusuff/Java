@@ -27,4 +27,17 @@ public class ToDoTest {
 
     }
 
+    @Test
+    public void shouldReturnListOfTasks() {
+        ToDo todo = new ToDo();
+        ArrayList<String> expectedList = new ArrayList<String>();
+        expectedList.add("Buy milk");
+        expectedList.add("Buy eggs");
+
+        todo.addTask("Buy milk");
+        todo.addTask("Buy eggs");
+        
+        assertEquals("Should return a list of all tasks", expectedList, todo.getTasks());
+    }
+
 }

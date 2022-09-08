@@ -11,4 +11,8 @@ public class ToDo {
         // return the array list with new task
         return tasks;
     }
+
+    public ArrayList<String> getTasks() {
+        return tasks;
+    }
 }
