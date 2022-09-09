@@ -5,18 +5,37 @@ public class Game {
 
 
     }
-    public String getsWordToGuess(String word){
-        StringBuilder sBuilder = new StringBuilder(word);
-        
-        for (int i = 1; i < word.length(); i++) {
-            sBuilder.replace(i, word.length(), "_");
+
+    // DEBUGGING EXERCISE EXAMPLE
+    public String getsWordToGuess(String word) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < word.length(); i++) {
+            Character currentLetter = word.charAt(0);
+            if (i == 0) {
+                builder.append(currentLetter);
+            } else {
+                builder.append("_");
+            }
         }
-        return sBuilder.toString();
+        return builder.toString();
     }
+}
 
-    }
+ // SOLUTION VIDEO EXAMPLE
 
-    // Using .charAt to show the first character of word
+    // public String getsWordToGuess(String word){
+    //     StringBuilder sBuilder = new StringBuilder(word);
+        
+    //     for (int i = 1; i < word.length(); i++) {
+    //         sBuilder.replace(i, word.length(), "_");
+    //     }
+    //     return sBuilder.toString();
+    // }
+
+
+//  MY INITIAL EXAMPLE
+// Using .charAt to show the first character of word
+
        // Parametrized constructor
         // String word;
         // Game(String answer) {
