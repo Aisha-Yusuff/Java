@@ -9,6 +9,8 @@ public class WordChooser {
     };
 
     public String getRandomWordFromDictionary() {
-        return "MAKERS";
+        Random rnd = new Random();
+        int index = rnd.nextInt(DICTIONARY.length);
+        return DICTIONARY[index];
     }
 }
