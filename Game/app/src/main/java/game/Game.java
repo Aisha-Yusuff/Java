@@ -1,20 +1,23 @@
 package game;
 
 import java.util.Dictionary;
+import java.util.Random;
 
 public class Game {
+    // When game class is initialize
+    // It uses a random word from dictionary to guess
+    public Game() {
+        getRandomWordFromDictionary();
+    }
 
     public static final String[] DICTIONARY = {"MAKERS", "CANDIES", "DEVELOPER", "LONDON"};
-
     Integer attempts = 10;
-    public static void main (String[] args) {
-
-
-    }
+    public static void main (String[] args) {}
 
     // DEBUGGING EXERCISE EXAMPLE
     public String getsWordToGuess(String word) {
         StringBuilder builder = new StringBuilder();
+
         for (int i = 0; i < word.length(); i++) {
             Character currentLetter = word.charAt(0);
             if (i == 0) {
@@ -28,6 +31,12 @@ public class Game {
 
     public Integer getRemainingAttempts() {
         return Integer.valueOf(attempts);
+    }
+
+    public String getRandomWordFromDictionary() {
+        Random rnd = new Random();
+        int index = rnd.nextInt(DICTIONARY.length);
+        return DICTIONARY[index];
     }
 }
 
