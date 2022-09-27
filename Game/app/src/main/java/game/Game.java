@@ -1,16 +1,15 @@
 package game;
 
-import java.util.Dictionary;
-import java.util.Random;
-
 public class Game {
-    // When game class is initialize
-    // It uses a random word from dictionary to guess
+    String word;
+
     public Game() {
-        getRandomWordFromDictionary();
+        // Dependency injection to inject an instance of WordChooser class
+        WordChooser wChooser = new WordChooser();
+        word = wChooser.getRandomWordFromDictionary();
+       
     }
 
-    public static final String[] DICTIONARY = {"MAKERS", "CANDIES", "DEVELOPER", "LONDON"};
     Integer attempts = 10;
     public static void main (String[] args) {}
 
@@ -31,12 +30,6 @@ public class Game {
 
     public Integer getRemainingAttempts() {
         return Integer.valueOf(attempts);
-    }
-
-    public String getRandomWordFromDictionary() {
-        Random rnd = new Random();
-        int index = rnd.nextInt(DICTIONARY.length);
-        return DICTIONARY[index];
     }
 }
 
