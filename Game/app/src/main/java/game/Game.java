@@ -1,6 +1,11 @@
 package game;
 
+import java.util.Dictionary;
+
 public class Game {
+
+    public static final String[] DICTIONARY = {"MAKERS", "CANDIES", "DEVELOPER", "LONDON"};
+
     Integer attempts = 10;
     public static void main (String[] args) {
 
