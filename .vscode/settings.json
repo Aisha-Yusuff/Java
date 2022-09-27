@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["getpricelabel"]
+  "cSpell.words": ["getpricelabel"],
+  "java.configuration.updateBuildConfiguration": "interactive"
 }

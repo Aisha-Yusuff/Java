@@ -3,10 +3,9 @@ package game;
 public class Game {
     String word;
 
-    public Game() {
+    public Game(WordChooser chooser) {
         // Dependency injection to inject an instance of WordChooser class
-        WordChooser wChooser = new WordChooser();
-        word = wChooser.getRandomWordFromDictionary();
+        word = chooser.getRandomWordFromDictionary();
        
     }
 
