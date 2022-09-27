@@ -1,25 +1,47 @@
 package game;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
 public class GameTest {
         @Test public void testGetsWordToGuess() {
-            Game game = new Game();
+            WordChooser mockedChooser = mock(WordChooser.class);
+            when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
+
+            Game game = new Game(mockedChooser);
             String word = "B_____";
-            assertEquals(game.getsWordToGuess(word), "B_____");
+            assertEquals(game.getsWordToGuess(), "B_____");
         }
 
         @Test public void testGetsWordToGuess2() {
-            Game game = new Game();
+            WordChooser mockedChooser = mock(WordChooser.class);
+            when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
+
+            Game game = new Game(mockedChooser);
             String word = "MAKERS";
-            assertEquals(game.getsWordToGuess(word), "M_____");
+            assertEquals(game.getsWordToGuess(), "M_____");
         }
 
         @Test public void testInitialRemainingAttempts() {
-            Game game = new Game();
+            WordChooser mockedChooser = mock(WordChooser.class);
+            when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
+
+            Game game = new Game(mockedChooser);
             assertEquals(game.getRemainingAttempts(), Integer.valueOf(10) );
         }
+
+        @Test
+        public void testGetsWordToGuessWithRandomWord() {
+            WordChooser mockedChooser = mock(WordChooser.class);
+            when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
+
+            Game game = new Game(mockedChooser);
+
+            assertEquals(game.getsWordToGuess(), "D________");
+        }
+
     }
     

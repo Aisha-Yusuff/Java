@@ -3,6 +3,8 @@ package game;
 public class Game {
     String word;
 
+    
+
     public Game(WordChooser chooser) {
         // Dependency injection to inject an instance of WordChooser class
         word = chooser.getRandomWordFromDictionary();
@@ -13,7 +15,7 @@ public class Game {
     public static void main (String[] args) {}
 
     // DEBUGGING EXERCISE EXAMPLE
-    public String getsWordToGuess(String word) {
+    public String getsWordToGuess() {
         StringBuilder builder = new StringBuilder();
 
         for (int i = 0; i < word.length(); i++) {
