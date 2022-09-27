@@ -1,6 +1,7 @@
 package game;
 
 public class Game {
+    Integer attempts = 10;
     public static void main (String[] args) {
 
 
@@ -19,9 +20,13 @@ public class Game {
         }
         return builder.toString();
     }
+
+    public Integer getRemainingAttempts() {
+        return Integer.valueOf(attempts);
+    }
 }
 
- // SOLUTION VIDEO EXAMPLE
+ // SOLUTION VIDEO EXAMPLE - getsWordToGuess
 
     // public String getsWordToGuess(String word){
     //     StringBuilder sBuilder = new StringBuilder(word);
