@@ -13,7 +13,7 @@ public class GameTest {
 
             Game game = new Game(mockedChooser);
             String word = "B_____";
-            assertEquals(game.getsWordToGuess(), "B_____");
+            assertEquals(game.getWordToGuess(), "B_____");
         }
 
         @Test public void testGetsWordToGuess2() {
@@ -22,7 +22,7 @@ public class GameTest {
 
             Game game = new Game(mockedChooser);
             String word = "MAKERS";
-            assertEquals(game.getsWordToGuess(), "M_____");
+            assertEquals(game.getWordToGuess(), "M_____");
         }
 
         @Test public void testInitialRemainingAttempts() {
@@ -40,7 +40,7 @@ public class GameTest {
 
             Game game = new Game(mockedChooser);
 
-            assertEquals(game.getsWordToGuess(), "D________");
+            assertEquals(game.getWordToGuess(), "D________");
         }
 
     }
