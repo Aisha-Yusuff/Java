@@ -14,14 +14,29 @@ public class Game {
     }
     public static void main (String[] args) {}
 
-    public String getWordToGuess(){
-        StringBuilder sBuilder = new StringBuilder(word);
-        
-        for (int i = 1; i < word.length(); i++) {
-            sBuilder.replace(i, word.length(), "_");
+    public String getWordToGuess() {
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < this.word.length(); i++) {
+            Character currentLetter = word.charAt(i);
+            if (i == 0) {
+                // Always show the first letter of word to guess
+                builder.append(currentLetter);
+            } else {
+                // show letter only if it was already guessed 
+                if (guessedLetters.indexOf(currentLetter) != -1) {
+                    builder.append(currentLetter);
+                } else {
+                    builder.append("_");
+                }
+            }
         }
-        return sBuilder.toString();
+        return builder.toString();
     }
+
+
+        
+       
 
     public Boolean guessLetter(Character letter) {
         if (this.word.indexOf(letter) != -1) {
@@ -34,10 +49,21 @@ public class Game {
         }
     }
   
+
     public Integer getRemainingAttempts() {
         return Integer.valueOf(attempts);
     }
 }
+
+// SOLUTION FROM VIDEO
+// public String getWordToGuess(){
+//     StringBuilder sBuilder = new StringBuilder(word);
+    
+//     for (int i = 1; i < word.length(); i++) {
+//         sBuilder.replace(i, word.length(), "_");
+//     }
+//     return sBuilder.toString();
+// }
 
 
 //   // DEBUGGING EXERCISE EXAMPLE
