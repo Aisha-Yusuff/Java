@@ -1,15 +1,17 @@
 package game;
 
+import java.util.ArrayList;
+
 public class Game {
     String word;
+    Integer attempts = 10;
+    ArrayList<Character> guessedLetters = new ArrayList<Character>();
 
     public Game(WordChooser chooser) {
         // Dependency injection to inject an instance of WordChooser class
         word = chooser.getRandomWordFromDictionary();
        
     }
-
-    Integer attempts = 10;
     public static void main (String[] args) {}
 
     public String getWordToGuess(){
@@ -19,6 +21,17 @@ public class Game {
             sBuilder.replace(i, word.length(), "_");
         }
         return sBuilder.toString();
+    }
+
+    public Boolean guessLetter(Character letter) {
+        if (this.word.indexOf(letter) != -1) {
+            guessedLetters.add(letter);
+            return true;
+        } else {
+            // remove one from the number of remaining attempts
+            attempts--;
+            return false;
+        }
     }
   
     public Integer getRemainingAttempts() {

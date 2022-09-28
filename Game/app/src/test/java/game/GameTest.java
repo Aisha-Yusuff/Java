@@ -41,5 +41,15 @@ public class GameTest {
             assertEquals(game.getWordToGuess(), "D________");
         }
 
+        @Test 
+        public void testGuessLetterRightAndDisplayLetter() {
+            WordChooser mockedChooser = mock(WordChooser.class);
+            when (mockedChooser.getRandomWordFromDictionary()).thenReturn("MAKERS");
+
+            Game game = new Game(mockedChooser);
+
+            assertEquals(game.guessLetter('A'), true);
+        }
+
     }
     
