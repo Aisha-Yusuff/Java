@@ -12,8 +12,7 @@ public class GameTest {
             when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
 
             Game game = new Game(mockedChooser);
-            String word = "B_____";
-            assertEquals(game.getWordToGuess(), "B_____");
+            assertEquals(game.getWordToGuess(), "D________");
         }
 
         @Test public void testGetsWordToGuess2() {
@@ -21,8 +20,7 @@ public class GameTest {
             when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
 
             Game game = new Game(mockedChooser);
-            String word = "MAKERS";
-            assertEquals(game.getWordToGuess(), "M_____");
+            assertEquals(game.getWordToGuess(), "D________");
         }
 
         @Test public void testInitialRemainingAttempts() {
