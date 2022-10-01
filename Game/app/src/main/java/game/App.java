@@ -29,8 +29,10 @@ public class App {
 
             if(result) {
                 System.out.println("Right!");
+                System.out.println(game.attempts + " attempts left");
             } else {
                 System.out.println("Wrong!");
+                System.out.println(game.attempts + " attempts left");
             }
         } while (game.attempts >= 0);
     }
