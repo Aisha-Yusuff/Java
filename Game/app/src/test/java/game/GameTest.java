@@ -92,16 +92,16 @@ public class GameTest {
             when(mockedChooser.getRandomWordFromDictionary()).thenReturn("CANDIES");
             
             Game game = new Game(mockedChooser);
-            assertEquals(game.guessLetter('O'), false);
-            assertEquals(game.guessLetter('O'), false);
-            assertEquals(game.guessLetter('O'), false);
-            assertEquals(game.guessLetter('O'), false);
-            assertEquals(game.guessLetter('O'), false);
-            assertEquals(game.guessLetter('O'), false);
-            assertEquals(game.guessLetter('O'), false);
-            assertEquals(game.guessLetter('O'), false);
-            assertEquals(game.guessLetter('O'), false);
-            assertEquals(game.guessLetter('O'), false); 
+            game.guessLetter('O');
+            game.guessLetter('O');
+            game.guessLetter('O');
+            game.guessLetter('O');
+            game.guessLetter('O');
+            game.guessLetter('O');
+            game.guessLetter('O');
+            game.guessLetter('O');
+            game.guessLetter('O');
+            game.guessLetter('O'); 
 
             assertTrue("Should lose game with no attempts", game.isGameLost());
         }
