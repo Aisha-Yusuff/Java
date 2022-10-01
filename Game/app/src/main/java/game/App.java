@@ -25,7 +25,8 @@ public class App {
             Scanner scanner = new Scanner(System.in);
 
             Character guess = scanner.nextLine().charAt(0);
-            Boolean result = game.guessLetter(guess);
+            // Convert user input to uppercase to make it case insensitive
+            Boolean result = game.guessLetter(Character.toUpperCase(guess));
 
             if(result) {
                 System.out.println("Right!");
