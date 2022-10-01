@@ -3,12 +3,17 @@
  */
 package game;
 
+import java.util.Scanner;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        // Instantiate both the Game and Word Chooser class
+        WordChooser chooser = new WordChooser();
+        Game game = new Game(chooser);
+        System.out.println("Welcome! Today the word to guess is:");
     }
 }
