@@ -35,9 +35,6 @@ public class Game {
     }
 
 
-        
-       
-
     public Boolean guessLetter(Character letter) {
         if (this.word.indexOf(letter) != -1) {
             guessedLetters.add(letter);
@@ -49,10 +46,17 @@ public class Game {
         }
     }
   
-
     public Integer getRemainingAttempts() {
         return Integer.valueOf(attempts);
     }
+
+    public Boolean isGameLost() {
+        if(attempts == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 }
 
 // SOLUTION FROM VIDEO

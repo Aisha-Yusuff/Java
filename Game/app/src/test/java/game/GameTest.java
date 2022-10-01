@@ -1,13 +1,15 @@
 package game;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
 public class GameTest {
-        @Test public void testGetsWordToGuess() {
+        @Test 
+        public void testGetsWordToGuess() {
             WordChooser mockedChooser = mock(WordChooser.class);
             when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
 
@@ -15,7 +17,8 @@ public class GameTest {
             assertEquals(game.getWordToGuess(), "D________");
         }
 
-        @Test public void testGetsWordToGuess2() {
+        @Test
+        public void testGetsWordToGuess2() {
             WordChooser mockedChooser = mock(WordChooser.class);
             when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
 
@@ -23,7 +26,8 @@ public class GameTest {
             assertEquals(game.getWordToGuess(), "D________");
         }
 
-        @Test public void testInitialRemainingAttempts() {
+        @Test 
+        public void testInitialRemainingAttempts() {
             WordChooser mockedChooser = mock(WordChooser.class);
             when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
 
@@ -61,7 +65,8 @@ public class GameTest {
             assertEquals(game.guessLetter('Z'), false);
         }
 
-        @Test public void testShouldShowCorrectlyGuessedLetter() {
+        @Test 
+        public void testShouldShowCorrectlyGuessedLetter() {
             WordChooser mockedChooser = mock(WordChooser.class);
             when(mockedChooser.getRandomWordFromDictionary()).thenReturn("DEVELOPER");
 
@@ -70,7 +75,8 @@ public class GameTest {
             assertEquals(game.getWordToGuess(), "DE_E___E_");
         }
 
-        @Test public void testGuessLetterWrongSoNoChangeToWord() {
+        @Test 
+        public void testGuessLetterWrongSoNoChangeToWord() {
             WordChooser mockedChooser = mock(WordChooser.class);
             when(mockedChooser.getRandomWordFromDictionary()).thenReturn("MAKERS");
         
@@ -80,5 +86,24 @@ public class GameTest {
             assertEquals(game.getWordToGuess(), "M_____");
         }
 
+        @Test
+        public void testShouldLoseGameIfNoRemainingAttempts() {
+            WordChooser mockedChooser = mock(WordChooser.class);
+            when(mockedChooser.getRandomWordFromDictionary()).thenReturn("CANDIES");
+            
+            Game game = new Game(mockedChooser);
+            assertEquals(game.guessLetter('O'), false);
+            assertEquals(game.guessLetter('O'), false);
+            assertEquals(game.guessLetter('O'), false);
+            assertEquals(game.guessLetter('O'), false);
+            assertEquals(game.guessLetter('O'), false);
+            assertEquals(game.guessLetter('O'), false);
+            assertEquals(game.guessLetter('O'), false);
+            assertEquals(game.guessLetter('O'), false);
+            assertEquals(game.guessLetter('O'), false);
+            assertEquals(game.guessLetter('O'), false); 
+
+            assertTrue("Should lose game with no attempts", game.isGameLost());
+        }
     }
     
