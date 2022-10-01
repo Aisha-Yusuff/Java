@@ -35,6 +35,6 @@ public class App {
                 System.out.println("Wrong!");
                 System.out.println(game.attempts + " attempts left");
             }
-        } while (game.attempts >= 0);
+        } while (!game.isGameLost());
     }
 }

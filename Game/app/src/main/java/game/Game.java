@@ -52,6 +52,7 @@ public class Game {
 
     public Boolean isGameLost() {
         if(attempts == 0) {
+            System.out.println("Oh no, you lost! Try again!");
             return true;
         } else {
             return false;
