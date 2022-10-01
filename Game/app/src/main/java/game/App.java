@@ -15,5 +15,23 @@ public class App {
         WordChooser chooser = new WordChooser();
         Game game = new Game(chooser);
         System.out.println("Welcome! Today the word to guess is:");
+        do {
+            System.out.println(game.getWordToGuess());
+
+            System.out.println("Enter one letter to guess:");
+            
+            // Scanner is used to get user input
+            // 1. Create a Scanner object
+            Scanner scanner = new Scanner(System.in);
+
+            Character guess = scanner.nextLine().charAt(0);
+            Boolean result = game.guessLetter(guess);
+
+            if(result) {
+                System.out.println("Right!");
+            } else {
+                System.out.println("Wrong!");
+            }
+        } while (game.attempts >= 0);
     }
 }
