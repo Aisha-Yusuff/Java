@@ -31,10 +31,16 @@ public class App {
             if(result) {
                 System.out.println("Right!");
                 System.out.println(game.attempts + " attempts left");
+
+                if(game.isGameWon()) {
+                    System.out.println("Well Done! You've won!");
+                    // Then end the game
+                    break;
+                }
             } else {
                 System.out.println("Wrong!");
                 System.out.println(game.attempts + " attempts left");
             }
         } while (!game.isGameLost());
     }
-}
+};

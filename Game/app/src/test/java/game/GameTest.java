@@ -121,5 +121,19 @@ public class GameTest {
 
             assertTrue("Should win game when word is guessed correctly", game.isGameWon());
         }
+
+        @Test
+        public void testShouldWinGameIfWordHasRepeatedLetters() {
+            WordChooser mockedChooser = mock(WordChooser.class);
+            when(mockedChooser.getRandomWordFromDictionary()).thenReturn("HAPPY");
+
+            Game game = new Game(mockedChooser);
+            game.guessLetter('A');
+            game.guessLetter('P');
+            game.guessLetter('P');
+            game.guessLetter('Y');
+
+            assertEquals(game.isGameWon(), true);
+        }
     }
     
