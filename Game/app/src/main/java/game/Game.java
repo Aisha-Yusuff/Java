@@ -58,6 +58,20 @@ public class Game {
             return false;
         }
     };
+
+    public boolean isGameWon() {
+        // Scan the word at index 1,
+        // Don't include the first letter 
+        // Because the player does not guess it
+        for (int i = 1; i < word.length(); i++) {
+            Character letter = word.charAt(i);
+            if (guessedLetters.indexOf(letter) == -1) {
+                return false;
+            }
+        }
+        return true;
+
+    };
 }
 
 // SOLUTION FROM VIDEO
